@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kellstrom-Ray Agency / Search-Visibility Audit and AEO Plan</title>
+<meta name="description" content="Seventy-eight-year Door County real estate agency, three owners since 1948, the only firm with a Washington Island physical presence. Zero of five AI-search citations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0e2a44;
+    --cedar: #9a5a39;
+    --ivory: #faf6ee;
+    --charcoal: #1a1f27;
+    --brass: #b08d3f;
+    --lake: #d8e4ec;
+    --white: #ffffff;
+    --border: #e4dfd2;
+    --muted: #5b6470;
+    --red: #b03a3a;
+    --red-bg: #f7e8e8;
+    --green: #2d6b4f;
+    --green-bg: #e6f0ea;
+    --shadow: 0 2px 8px rgba(14, 42, 68, 0.06);
+    --shadow-md: 0 6px 18px rgba(14, 42, 68, 0.10);
+    --radius: 6px;
+    --radius-lg: 10px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--charcoal);
+    background: var(--ivory);
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--navy);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  h1 { font-size: 2.4rem; letter-spacing: -0.01em; }
+  h2 { font-size: 1.9rem; margin-bottom: 1rem; }
+  h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
+  h4 { font-size: 1.1rem; font-family: 'Inter', sans-serif; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+  p { margin-bottom: 1rem; }
+  a { color: var(--cedar); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  strong { color: var(--navy); font-weight: 700; }
+
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Sticky Header */
+  header.site {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    color: var(--ivory);
+    border-bottom: 3px solid var(--brass);
+    box-shadow: var(--shadow);
+  }
+  header.site .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+  }
+  .brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ivory);
+    letter-spacing: 0.01em;
+  }
+  .brand-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--lake);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .brand-block { display: flex; flex-direction: column; }
+  .header-meta {
+    font-size: 0.82rem;
+    color: var(--lake);
+    text-align: right;
+  }
+
+  /* Hero */
+  section.hero {
+    background: linear-gradient(180deg, var(--ivory) 0%, var(--lake) 100%);
+    padding: 4rem 0 3.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero h1 {
+    max-width: 900px;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+  }
+  .hero .lede {
+    max-width: 760px;
+    font-size: 1.1rem;
+    color: var(--charcoal);
+    margin-bottom: 0;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cedar);
+    background: var(--white);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Generic section */
+  section {
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  section.alt { background: var(--white); }
+  section .section-intro {
+    max-width: 760px;
+    margin-bottom: 2rem;
+    color: var(--muted);
+    font-size: 1.02rem;
+  }
+  .section-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 0.6rem;
+  }
+
+  /* Snapshot grid */
+  .snapshot {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .snapshot-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--cedar);
+    padding: 1.25rem 1.4rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .snapshot-item h4 {
+    font-size: 0.82rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+  .snapshot-item .val {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.4;
+  }
+  .snapshot-item .val .small {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-top: 0.3rem;
+    line-height: 1.5;
+  }
+
+  /* Audit query cards */
+  .audit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .audit-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+  }
+  .audit-card .query {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    font-style: italic;
+  }
+  .audit-card .status {
+    display: inline-block;
+    background: var(--red-bg);
+    color: var(--red);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.7rem;
+    border-radius: var(--radius);
+    margin-bottom: 0.8rem;
+    align-self: flex-start;
+  }
+  .audit-card .note {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 0;
+  }
+  .audit-summary {
+    margin-top: 1.5rem;
+    padding: 1.4rem 1.6rem;
+    background: var(--navy);
+    color: var(--ivory);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .audit-summary .label {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--lake);
+  }
+  .audit-summary .score {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--brass);
+  }
+
+  /* Missing list */
+  .missing-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .missing-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--brass);
+    padding: 1.3rem 1.4rem;
+    border-radius: var(--radius);
+  }
+  .missing-item .name {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy);
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+  .missing-item .desc {
+    font-size: 0.93rem;
+    color: var(--muted);
+    margin-bottom: 0;
+  }
+
+  /* Phase plan */
+  .plan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .phase-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  .phase-card .ph-label {
+    display: inline-block;
+    background: var(--cedar);
+    color: var(--ivory);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border-radius: var(--radius);
+    margin-bottom: 0.8rem;
+  }
+  .phase-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.6rem;
+  }
+  .phase-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .phase-card ul li {
+    position: relative;
+    padding-left: 1.1rem;
+    margin-bottom: 0.55rem;
+    font-size: 0.94rem;
+    color: var(--charcoal);
+    line-height: 1.55;
+  }
+  .phase-card ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    width: 5px;
+    height: 5px;
+    background: var(--brass);
+    border-radius: 50%;
+  }
+
+  /* Why Us */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .why-card {
+    background: var(--white);
+    padding: 1.6rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--brass);
+  }
+  .why-card .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--cedar);
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    line-height: 1;
+  }
+  .why-card h3 { font-size: 1.1rem; margin-bottom: 0.6rem; }
+  .why-card p { font-size: 0.95rem; color: var(--muted); margin-bottom: 0; }
+
+  /* Day 90 */
+  .success-list {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-top: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .success-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  .success-list li {
+    padding: 0.9rem 0;
+    padding-left: 2.2rem;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+    font-size: 1rem;
+  }
+  .success-list li:last-child { border-bottom: none; }
+  .success-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.1rem;
+    width: 18px;
+    height: 18px;
+    background: var(--green-bg);
+    border: 2px solid var(--green);
+    border-radius: 50%;
+  }
+  .success-list li::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 1.4rem;
+    width: 8px;
+    height: 4px;
+    border-left: 2px solid var(--green);
+    border-bottom: 2px solid var(--green);
+    transform: rotate(-45deg);
+  }
+
+  /* Engagement / CTA */
+  section.cta {
+    background: var(--navy);
+    color: var(--ivory);
+    text-align: center;
+    border-bottom: none;
+  }
+  section.cta h2 { color: var(--ivory); }
+  section.cta p { color: var(--lake); max-width: 640px; margin-left: auto; margin-right: auto; }
+  .cta-button {
+    display: inline-block;
+    background: var(--brass);
+    color: var(--navy);
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: var(--radius);
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    transition: background 0.2s ease;
+  }
+  .cta-button:hover {
+    background: var(--ivory);
+    text-decoration: none;
+  }
+
+  /* Footer */
+  footer {
+    background: #08192a;
+    color: var(--lake);
+    padding: 2.5rem 0 2rem;
+    font-size: 0.85rem;
+  }
+  footer .container { display: flex; flex-direction: column; gap: 1rem; }
+  footer p { margin-bottom: 0.5rem; }
+  footer .disclaimer {
+    font-size: 0.78rem;
+    color: #8a96a4;
+    line-height: 1.55;
+    max-width: 900px;
+  }
+  footer .sign-off { font-weight: 600; color: var(--ivory); }
+  footer a { color: var(--brass); }
+  footer a:hover { color: var(--ivory); }
+
+  /* Print */
+  @media print {
+    header.site { position: static; box-shadow: none; }
+    body { background: white; }
+    section { page-break-inside: avoid; padding: 1.5rem 0; }
+    .audit-card, .phase-card, .why-card, .missing-item, .snapshot-item { box-shadow: none; }
+    .cta-button { display: none; }
+  }
+
+  /* Mobile */
+  @media (max-width: 720px) {
+    h1 { font-size: 1.85rem; }
+    .hero h1 { font-size: 1.85rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.15rem; }
+    section { padding: 2.5rem 0; }
+    section.hero { padding: 2.5rem 0; }
+    .snapshot { grid-template-columns: 1fr; }
+    header.site .container { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .header-meta { text-align: left; }
+    .audit-summary { flex-direction: column; align-items: flex-start; }
+    .container { padding: 0 1.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="container">
+    <div class="brand-block">
+      <span class="brand">Kellstrom-Ray Agency</span>
+      <span class="brand-sub">Search-Visibility Audit</span>
+    </div>
+    <div class="header-meta">
+      Door County, Wisconsin<br>
+      Prepared for Heather Collins, Principal Broker
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">AEO Audit / Door County Real Estate</span>
+    <h1>Seventy-eight years. Three owners only. The oldest real estate agency in Door County. Zero of five AI-search citations on the queries Sister Bay and Washington Island buyers actually use.</h1>
+    <p class="lede">This document records what AI search engines say today when buyers ask about Sister Bay listings, Washington Island waterfront, and Northern Door County agents. It then proposes a ninety-day plan to publish the agency's owner lineage, its Washington Island physical presence, and the structured data those engines need to begin citing Kellstrom-Ray by name.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <span class="section-tag">Section 1</span>
+    <h2>Agency Snapshot</h2>
+    <p class="section-intro">A short factual record of what Kellstrom-Ray Agency, Inc. is today and how it arrived at seventy-eight years under three owners. Each item below is a candidate for structured publication.</p>
+    <div class="snapshot">
+      <div class="snapshot-item">
+        <h4>Founded</h4>
+        <div class="val">1948
+          <span class="small">By Kermit and Marion Kellstrom in Sister Bay, Wisconsin.</span>
+        </div>
+      </div>
+      <div class="snapshot-item">
+        <h4>Second Owners</h4>
+        <div class="val">Don and Kathy Ray
+          <span class="small">Acquired the agency from the Kellstrom family. Both family names preserved in the firm name to the present day.</span>
+        </div>
+      </div>
+      <div class="snapshot-item">
+        <h4>Third and Current Owner</h4>
+        <div class="val">Heather Collins, Principal Broker
+          <span class="small">Acquired the agency in May 2007. Third owner in seventy-eight years.</span>
+        </div>
+      </div>
+      <div class="snapshot-item">
+        <h4>Team</h4>
+        <div class="val">Seven full-time associates
+          <span class="small">One hundred forty-seven years of combined Door County real estate experience.</span>
+        </div>
+      </div>
+      <div class="snapshot-item">
+        <h4>Primary Market</h4>
+        <div class="val">Northern Door County waterfront
+          <span class="small">Sister Bay, Ephraim, Bailey's Harbor, Ellison Bay, and the surrounding Northern Door peninsula.</span>
+        </div>
+      </div>
+      <div class="snapshot-item">
+        <h4>Niche Presence</h4>
+        <div class="val">Washington Island branch office
+          <span class="small">A physical office on Washington Island, structurally rare among Door County agencies.</span>
+        </div>
+      </div>
+      <div class="snapshot-item">
+        <h4>Web Surface</h4>
+        <div class="val">kellstromray.com
+          <span class="small">Primary site. Facebook page at facebook.com/kellstromray. No Instagram presence.</span>
+        </div>
+      </div>
+      <div class="snapshot-item">
+        <h4>Regulatory Context</h4>
+        <div class="val">Wisconsin REEB Ch. 452
+          <span class="small">Wisconsin licensed real estate firm. Disclosure and advertising standards under Wis. Stat. ch. 452 and REEB administrative code.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-tag">Section 2</span>
+    <h2>Five-Query AI Search Audit</h2>
+    <p class="section-intro">Five buyer-side queries were tested against AI answer engines. These are the question shapes a buyer or seller types when they have not yet chosen a brokerage. For each query, the result records whether Kellstrom-Ray Agency was cited in the generated answer.</p>
+    <div class="audit-grid">
+      <div class="audit-card">
+        <div class="query">"Sister Bay real estate"</div>
+        <span class="status">Not Cited</span>
+        <p class="note">AI answers default to national franchise brand pages (Coldwell Banker, Shorewest, and Christie's listings). The oldest Sister Bay headquartered agency does not appear in the cited result set.</p>
+      </div>
+      <div class="audit-card">
+        <div class="query">"Washington Island real estate"</div>
+        <span class="status">Not Cited</span>
+        <p class="note">A structurally rare niche. Few agencies hold a physical office on Washington Island, and yet the Kellstrom-Ray branch is absent from generated answers. The niche-capture opportunity is being lost to mainland-only listings.</p>
+      </div>
+      <div class="audit-card">
+        <div class="query">"Door County waterfront homes"</div>
+        <span class="status">Not Cited</span>
+        <p class="note">Generated answers favor franchise national pages and aggregated Zillow surfaces. Northern Door waterfront, the agency's primary specialty, is not anchored to Kellstrom-Ray in any cited source.</p>
+      </div>
+      <div class="audit-card">
+        <div class="query">"oldest real estate agency Door County"</div>
+        <span class="status">Not Cited</span>
+        <p class="note">The agency's most defensible claim, seventy-eight years and three owners only, does not surface in the AI answer. No competing firm in Door County holds an older verifiable founding date than 1948, and yet the credential remains uncited.</p>
+      </div>
+      <div class="audit-card">
+        <div class="query">"luxury homes Northern Door County"</div>
+        <span class="status">Not Cited</span>
+        <p class="note">Premium-segment buyers asking about Northern Door luxury inventory receive franchise-led results. The agency's seven-associate roster and one hundred forty-seven combined years of Northern Door experience is not represented in the citation set.</p>
+      </div>
+    </div>
+    <div class="audit-summary">
+      <div>
+        <div class="label">Overall Citation Score</div>
+        <p style="margin: 0.3rem 0 0; color: var(--lake);">Five buyer-side queries tested. Citations to Kellstrom-Ray Agency, Inc.</p>
+      </div>
+      <div class="score">0 / 5</div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <span class="section-tag">Section 3</span>
+    <h2>What Is Missing From the Page</h2>
+    <p class="section-intro">AI engines cite pages that publish structured, machine-readable facts about an organization, its people, its locations, and its market. The seven items below are the gaps between what the agency is and what its current web surface tells an engine. Each is addressable.</p>
+    <div class="missing-list">
+      <div class="missing-item">
+        <div class="name">Organization Schema with Founder and Three-Owner Lineage</div>
+        <p class="desc">A schema.org Organization record naming Kermit and Marion Kellstrom as founders in 1948, Don and Kathy Ray as second owners, and Heather Collins, Principal Broker, as the May 2007 acquirer. Published as parentOrganization or, in companion form, as Article schema with a clear historical timeline.</p>
+      </div>
+      <div class="missing-item">
+        <div class="name">RealEstateAgent Record for Heather Collins</div>
+        <p class="desc">A RealEstateAgent schema entry for Ms. Collins identifying her as the Principal Broker, with the office address and the licensing jurisdiction. Companion Person records for each of the seven full-time associates.</p>
+      </div>
+      <div class="missing-item">
+        <div class="name">LocalBusiness Schema for the Sister Bay Headquarters</div>
+        <p class="desc">A LocalBusiness record for the Sister Bay office with structured address, geo coordinates, opening hours, and a verifiable founding date of 1948. This anchors the headquarters location to the brand for local search.</p>
+      </div>
+      <div class="missing-item">
+        <div class="name">LocalBusiness Schema for the Washington Island Branch</div>
+        <p class="desc">A second LocalBusiness record for the Washington Island branch office. Publishing this branch as a discrete LocalBusiness, not a mention buried in body text, is what allows an engine to answer "Washington Island real estate" with Kellstrom-Ray.</p>
+      </div>
+      <div class="missing-item">
+        <div class="name">Place Schema for Washington Island as a Submarket</div>
+        <p class="desc">A Place record for Washington Island, Wisconsin, with relationships back to the agency's branch office. This treats the island as a distinct market and signals to engines that the agency operates there as a resident firm rather than a visiting one.</p>
+      </div>
+      <div class="missing-item">
+        <div class="name">FAQPage Schema for Buyer-Side Questions</div>
+        <p class="desc">An FAQPage record answering the buyer-side questions that surfaced in the audit: who represents buyers on Washington Island, how long the agency has operated in Sister Bay, what waterfront submarkets it covers, and which agent leads each specialty.</p>
+      </div>
+      <div class="missing-item">
+        <div class="name">Article Page Anchoring the 75-Year Feature</div>
+        <p class="desc">The 2023 Door County Pulse feature marking the agency's seventy-fifth year is a strong third-party citation. A dedicated page on kellstromray.com that links to and quotes the Pulse coverage, marked up with Article and citation schema, converts that press into a machine-readable provenance source.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-tag">Section 4</span>
+    <h2>Ninety-Day Plan</h2>
+    <p class="section-intro">A four-phase work plan to address the gaps above and move the agency from zero of five cited to a measurable share of generated answers for Sister Bay, Washington Island, and Northern Door queries. Each phase is scoped to a specific outcome.</p>
+    <div class="plan-grid">
+      <div class="phase-card">
+        <span class="ph-label">Phase 1 / Days 1 to 14</span>
+        <h3>Foundation and Lineage Page</h3>
+        <ul>
+          <li>Build the agency-history page anchoring founder names, owner transitions, and the May 2007 acquisition by Heather Collins, Principal Broker.</li>
+          <li>Quote and link the Door County Pulse 75-year feature as a third-party provenance source.</li>
+          <li>Publish Organization and Article schema for the history page, with parentOrganization references where appropriate.</li>
+          <li>Audit current site crawlability and resolve any robots, meta, or hosting issues that prevent indexing.</li>
+        </ul>
+      </div>
+      <div class="phase-card">
+        <span class="ph-label">Phase 2 / Days 15 to 35</span>
+        <h3>Locations and People</h3>
+        <ul>
+          <li>Publish two LocalBusiness records: the Sister Bay headquarters and the Washington Island branch, each with full address, geo, and hours.</li>
+          <li>Publish a RealEstateAgent record for Ms. Collins and Person records for each of the seven associates, with role, specialty, and submarket coverage.</li>
+          <li>Add a Place record for Washington Island and reference it from the branch LocalBusiness as a serviced area.</li>
+          <li>Confirm and validate all schema with Google Rich Results and Schema.org validators.</li>
+        </ul>
+      </div>
+      <div class="phase-card">
+        <span class="ph-label">Phase 3 / Days 36 to 70</span>
+        <h3>Submarket and Specialty Pages</h3>
+        <ul>
+          <li>Build dedicated submarket pages for Sister Bay, Ephraim, Bailey's Harbor, Ellison Bay, and Washington Island, each with a market overview and links to active listings.</li>
+          <li>Add an FAQPage section to each submarket page answering the buyer-side questions surfaced in the audit.</li>
+          <li>Build a Northern Door waterfront specialty page with associate attributions and the agency's combined years of waterfront experience.</li>
+          <li>Internal-link the submarket pages to the agency history page and back, so engines can traverse from a buyer query to the lineage credential.</li>
+        </ul>
+      </div>
+      <div class="phase-card">
+        <span class="ph-label">Phase 4 / Days 71 to 90</span>
+        <h3>Re-Audit and Iterate</h3>
+        <ul>
+          <li>Re-run the five-query audit. Record any answer-engine surfaces that now cite Kellstrom-Ray.</li>
+          <li>Add three further queries focused on submarkets newly published in Phase 3.</li>
+          <li>Patch any remaining gaps in schema, internal linking, or missing third-party citations.</li>
+          <li>Hand over a maintenance checklist so the agency can keep listings, associate records, and the history page current without further engineering work.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <span class="section-tag">Section 5</span>
+    <h2>Why This Plan Fits Kellstrom-Ray</h2>
+    <p class="section-intro">Three premises behind the work. Each one is specific to this agency and would not generalize to a typical Door County brokerage.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="num">01</div>
+        <h3>Seventy-Eight-Year Heritage Continuity</h3>
+        <p>Three owners in seventy-eight years is rare in any market and especially rare in Door County real estate. Both prior owner names remain in the firm name. That continuity is a defensible, durable credential, and it is publishable today as machine-readable structured data.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">02</div>
+        <h3>Washington Island Physical-Presence Niche</h3>
+        <p>The Washington Island branch office is a structurally rare asset. Very few Door County agencies hold a resident presence on the island. Publishing the branch as a discrete LocalBusiness with a linked Place record is what converts that physical reality into a citable answer for island-specific buyer queries.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">03</div>
+        <h3>Phase-2 Capture Beats New-Agent SEO</h3>
+        <p>An agency with seventy-eight years of operating history, third-party press, and seven licensed associates can publish provenance the way a newer brokerage cannot. The shortest path to citation is to put what already exists into machine-readable form, not to manufacture new content for AI engines to weigh.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-tag">Section 6</span>
+    <h2>What Day Ninety Looks Like</h2>
+    <p class="section-intro">A concrete picture of the deliverables and observable changes at the close of the ninety-day engagement.</p>
+    <div class="success-list">
+      <ul>
+        <li>An agency-history page is live on kellstromray.com, anchored by Organization and Article schema, with the founder names, owner transitions, and the Door County Pulse feature linked and quoted.</li>
+        <li>Two validated LocalBusiness schema records are deployed, one for the Sister Bay headquarters and one for the Washington Island branch, each with complete address, geo coordinates, hours, and founding context.</li>
+        <li>A RealEstateAgent schema record for Heather Collins, Principal Broker, and Person records for each of the seven full-time associates are live and traversable from the agency homepage.</li>
+        <li>Five submarket pages, including Washington Island, carry their own FAQPage schema and are internally linked to the agency-history page so engines can connect a buyer query to the lineage credential.</li>
+        <li>The five-query audit is re-run and recorded. New queries focused on Phase 3 submarket pages are added. A maintenance checklist for the in-house team is delivered.</li>
+        <li>Where the audit at Day Zero recorded zero of five citations, the Day Ninety re-audit produces a measurable, recorded baseline for ongoing AEO work.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <span class="section-tag" style="color: var(--brass);">Engagement</span>
+    <h2>Next Step</h2>
+    <p>If the plan above is the right shape of work, the next step is a short scoping call to confirm the audit findings, validate the agency-history facts on the record, and agree the Phase 1 page outline. The audit results in this document, the snapshot, and the five-query record are yours to use whether or not the engagement proceeds.</p>
+    <a class="cta-button" href="https://andrei170.github.io/ag1/#services">Review Services and Open Scoping Call</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p class="sign-off">Prepared for Heather Collins, Principal Broker, Kellstrom-Ray Agency, Inc., Sister Bay and Washington Island, Wisconsin.</p>
+    <p class="disclaimer">This document is an independent search-visibility audit. It is not a listing solicitation, not a property valuation, and not a representation of the agency by the author. Kellstrom-Ray Agency, Inc. is a Wisconsin licensed real estate firm regulated under Wis. Stat. ch. 452 and the Wisconsin Real Estate Examining Board (REEB) administrative code, including the advertising standards under Wis. Stat. 452.18 and related REEB chapters. All representations of the agency's history, ownership lineage, team composition, market focus, and Washington Island branch presence are drawn from publicly available sources, including kellstromray.com and the 2023 Door County Pulse seventy-fifth-year feature, and are presented for the agency's review and verification.</p>
+    <p>Audit and plan prepared by Andrei Givero. Engagement details and services at <a href="https://andrei170.github.io/ag1/#services">https://andrei170.github.io/ag1/#services</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
