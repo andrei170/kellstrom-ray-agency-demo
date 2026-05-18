@@ -457,6 +457,43 @@
   footer a { color: var(--brass); }
   footer a:hover { color: var(--ivory); }
 
+  /* Press figure pair */
+  .press-figures {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 0.5rem 0 2rem;
+  }
+  .press-figures figure {
+    margin: 0;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .press-figures img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 3 / 2;
+  }
+  .press-figures figcaption {
+    padding: 0.85rem 1rem 1rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .press-figures figcaption strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 0.98rem;
+    margin-bottom: 0.25rem;
+  }
+
   /* Print */
   @media print {
     header.site { position: static; box-shadow: none; }
@@ -475,6 +512,7 @@
     section { padding: 2.5rem 0; }
     section.hero { padding: 2.5rem 0; }
     .snapshot { grid-template-columns: 1fr; }
+    .press-figures { grid-template-columns: 1fr; }
     header.site .container { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
     .header-meta { text-align: left; }
     .audit-summary { flex-direction: column; align-items: flex-start; }
@@ -510,6 +548,22 @@
     <span class="section-tag">Section 1</span>
     <h2>Agency Snapshot</h2>
     <p class="section-intro">A short factual record of what Kellstrom-Ray Agency, Inc. is today and how it arrived at seventy-eight years under three owners. Each item below is a candidate for structured publication.</p>
+    <div class="press-figures">
+      <figure>
+        <img src="https://doorcountypulse.com/wp-content/uploads/2023/06/Heather-Collins-broker_owner-e1685638858914-990x660.jpg" alt="Heather Collins, Broker and Owner of Kellstrom-Ray Agency" loading="lazy" width="990" height="660">
+        <figcaption>
+          <strong>Heather Collins, Broker and Owner</strong>
+          Featured in the Door County Pulse seventy-fifth-anniversary feature on Kellstrom-Ray Agency, published June 1, 2023. Source: <a href="https://doorcountypulse.com/kellstrom-ray-celebrates-75-years-in-the-door-community/" rel="noopener">doorcountypulse.com</a>.
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="https://doorcountypulse.com/wp-content/uploads/2018/03/KRay-OfficeWEB.jpg" alt="Kellstrom-Ray Agency office in Sister Bay, Wisconsin" loading="lazy" width="800" height="533">
+        <figcaption>
+          <strong>Sister Bay Office</strong>
+          Kellstrom-Ray Agency office as published in Door County Pulse coverage of the agency. Source: <a href="https://doorcountypulse.com/kellstrom-ray-celebrates-75-years-in-the-door-community/" rel="noopener">doorcountypulse.com</a>.
+        </figcaption>
+      </figure>
+    </div>
     <div class="snapshot">
       <div class="snapshot-item">
         <h4>Founded</h4>
